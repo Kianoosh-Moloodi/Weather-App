@@ -20,7 +20,7 @@ class UI{
     
     paint(weather){
         this.location.textContent = weather.name;
-        const temp_c_fl = parseFloat(weather.main.feels_like - 273.15).toFixed(0);
+        const temp_c_fl = parseFloat(weather.main.feels_like - 273).toFixed(0);
         this.feels_like_temp.textContent = temp_c_fl;
         const temp_c_visible = parseFloat(weather.visibility / 1000).toFixed(1);
         this.visibility.textContent = temp_c_visible;
@@ -28,11 +28,11 @@ class UI{
         this.main.textContent = weather.weather[0].main;
         this.icon.setAttribute('src' , `https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`);
         this.flag.setAttribute('src' , `https://openweathermap.org/images/flags/${weather.sys.country.toLowerCase()}.png`);
-        const temp_c = parseFloat(weather.main.temp - 272.15).toFixed(1);
+        const temp_c = parseFloat(weather.main.temp - 273).toFixed(1);
         this.temp.textContent = temp_c;
-        const temp_c_min = parseFloat(weather.main.temp_min - 273.15).toFixed(1);
+        const temp_c_min = parseFloat(weather.main.temp_min - 273).toFixed(1);
         this.temp_min.textContent = temp_c_min;
-        const temp_c_max = parseFloat(weather.main.temp_max - 265.15).toFixed(1);
+        const temp_c_max = parseFloat(weather.main.temp_max - 273).toFixed(1);
         this.temp_max.textContent = temp_c_max;
         this.pressure.textContent = weather.main.pressure;
         this.humidity.textContent = weather.main.humidity;
